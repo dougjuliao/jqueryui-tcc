@@ -1,0 +1,68 @@
+<div class="content-html">
+    <h1>menu</h1>
+    <hr class="hr"/>
+    <div class="comentario_funcao">
+        <p>O jQuery UI tem uma estilização para menus utilizando ul e li, o menu principal ao lado esquerdo foi feito com jQuery UI.</p>
+        <p>O código para adicionar o menu seria esse:
+            <pre><code class="hljs javascript">
+                 $('.menu-interno').menu();
+            </code></pre>
+        </p>
+		<div class="clear"></div>
+		<br />
+		<div class="menu-all">
+			<ul class="menu-interno">
+				<li><a href="#">Menu 1</a></li>
+				<li><a href="#">Menu 2</a></li>
+				<li>
+					<a href="#">Menu 3</a>
+					<ul >
+						<li><a href="#">Sub Menu 1</a></li>
+						<li><a href="#">Sub Menu 2</a></li>
+						<li><a href="#">Sub Menu 3</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Menu 4</a></li>
+				<li><a href="#">Menu 5</a>
+					<ul>
+					  <li><a href="#">Sub Menu 1</a>
+						<ul style="width: 90px;">
+							<li><a href="#">Menu 2</a></li>
+							<li><a href="#">Menu 3</a></li>
+							<li><a href="#">Menu 4</a></li>
+						</ul>
+					  </li>
+					  <li><a href="#">Sub Menu 2</a>
+						<ul style="width: 90px;">
+							<li><a href="#">Menu 5</a></li>
+							<li><a href="#">Menu 6</a></li>
+							<li><a href="#">Menu 7</a></li>
+						</ul>
+					  </li>
+					</ul>
+				 </li>
+				 <li><a href="#">Menu 6</a></li>
+			</ul>
+			<ul class="menu-interno" style="margin-left: 230px;">
+			  <li><a href="#"><span class="ui-icon ui-icon-disk"></span>Save</a></li>
+			  <li><a href="#"><span class="ui-icon ui-icon-zoomin"></span>Zoom In</a></li>
+			  <li><a href="#"><span class="ui-icon ui-icon-zoomout"></span>Zoom Out</a></li>
+			  <li class="ui-state-disabled"><a href="#"><span class="ui-icon ui-icon-print"></span>Print...</a></li>
+			  <li><a href="#">Playback</a>
+				<ul>
+				  <li><a href="#"><span class="ui-icon ui-icon-seek-start"></span>Prev</a></li>
+				  <li><a href="#"><span class="ui-icon ui-icon-stop"></span>Stop</a></li>
+				  <li><a href="#"><span class="ui-icon ui-icon-play"></span>Play</a></li>
+				  <li><a href="#"><span class="ui-icon ui-icon-seek-end"></span>Next</a></li>
+				</ul>
+			  </li>
+			</ul>
+		</div>	
+	</div>
+</div>	
+<script type="text/javascript">
+	/*-------------- MENU ---------------*/
+	$('.menu-interno').menu();
+
+	hightlight();
+</script>

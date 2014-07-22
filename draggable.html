@@ -1,0 +1,263 @@
+<div class="content-html">
+    <h1>Draggable</h1>
+    <hr class="hr"/>
+    <div class="comentario_funcao">
+        <p>Efeito draggable faz com que seja possível arrastar itens por toda a página ou áreas expecíficas.</p>
+        <p>O código default do draggable ficaria assim:
+            <pre><code class="hljs javascript">
+                 $('.draggable-default').draggable();
+            </code></pre>
+        </p>
+        <p>Clique nos botões abaixo para ver o efeito.</p>
+        <div class="menu-accordion menu-drag">
+            <ul style="width: 100%; margin-left: -24px;">
+                <li class="drag-default-bt" id="0">Default</li>
+                <li class="drag-movement-bt" id="1">Constrain movement</li>
+                <li class="drag-cursor-bt" id="2">Cursor Style</li>
+                <li class="drag-delay-bt" id="3">Delay start</li>
+                <li class="drag-event-bt" id="4">Event</li>
+                <li class="drag-handle-bt" id="5">Handles</li>
+                <li class="drag-revert-bt" id="6">Revert Position</li>
+                <li class="drag-grid-bt" id="7">Grid</li>
+                <li class="drag-feedback-bt" id="8">Feedback</li>
+                <li class="drag-sortable-bt" id="9">Sortable</li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+        <br />
+        <div class="container-drag">
+            <!-- DEFAULT -->
+            <div class="content-drag content-default">
+                <div class="drag-default drag-estilo">
+                    Ei,me arraste por ai!!
+                </div>
+            </div>
+
+            <div class="content-drag content-movement">
+                <div class="drag-movement drag-estilo drag-float">
+                    Ei,me arraste por ai!!
+                    Eu sou o dra x.
+                </div>
+                <div class="drag-movement1 drag-estilo drag-float">
+                    Ei,me arraste por ai!!
+                    Eu sou o dra y.
+                </div>
+                <div class="drag-movement2 drag-estilo drag-float">
+                    Ei,me arraste por ai!!
+                    Eu Não posso sair dessa area escura.
+                </div>
+                <div class="clear"></div>
+                <p>Com essa opção eu posso definir um drag somente para x ou y e arrastar o conteudo dentro de uma div.</p>
+            </div>
+            <!-- CURSOR -->
+            <div class="content-drag content-cursor">
+                <div class="drag-cursor drag-estilo drag-float" style="cursor: move;">
+                    Ei,me arraste por ai!!
+                    cursor: move
+                </div>
+                <div class="drag-cursor1 drag-estilo drag-float">
+                    Ei,me arraste por ai!!
+                    cursor: crosshair
+                </div>
+                <div class="drag-cursor2 drag-estilo drag-float">
+                    Ei,me arraste por ai!!
+                    cursor: e-resize
+                </div>
+                <div class="drag-cursor3 drag-estilo drag-float">
+                    Ei,me arraste por ai!!
+                    cursor: n-resize
+                </div>
+                <div class="drag-cursor4 drag-estilo drag-float">
+                    Ei,me arraste por ai!!
+                    cursor: no-drop
+                </div>
+                <div class="drag-cursor5 drag-estilo drag-float" style="margin-top:4px">
+                    Ei,me arraste por ai!!
+                    cursor: cell
+                    meu cursor está:
+                    top: 56px
+                    left: 56px
+                </div>
+                <div class="clear"></div>
+                <p>Com o cursor eu posso mudar o icone do ponteiro e posso definir  a posição do cursor no momento do arraste.</p>
+            </div>
+
+            <!-- DELAY -->
+            <div class="content-drag content-delay">
+                <div class="drag-delay drag-estilo drag-float">
+                    Ei,me arraste por ai!!
+                    após 400ms depois de disparar a função, irei ser arrastado.
+                </div>
+                <div class="drag-delay drag-estilo drag-float">
+                    Ei,me arraste por ai!!
+                    Irei mover após uma distancia de 100px.
+                </div>
+            </div>
+
+            <!-- EVENT -->
+            <div class="content-drag content-event">
+                <div class="drag-event drag-estilo" style="width: 190px; height: 164px;">
+                    <p>Ei,me arraste por ai!!</p>
+                    <ul class="ui-helper-reset">
+                        <li id="event-start" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-play"></span>"start" evento <span class="count">0</span>x</li>
+                        <li id="event-drag" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-arrow-4"></span>"drag" arrastando <span class="count">0</span>x</li>
+                        <li id="event-stop" class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-stop"></span>"stop" parado <span class="count">0</span>x</li>
+                    </ul>
+                </div>
+                <p>Esse evento faz com que seja possivel pegar as posições e ações do drag, no exemplo acima esta sendo mostrado as vezes que o iten é arrastado, parado e percorrido em px.</p>
+            </div>
+            <!-- HANDLE -->
+            <div class="content-drag content-handle">
+                <div class="drag-handle drag-estilo">
+                    Ei,me arraste por ai!!
+                    Utilize a area branca :D
+                    <p style="background-color:#000; color:#fff; padding: 8px;">Se você tentar não irá conseguir me arrastar por aqui</p>
+                </div>
+            </div>
+
+            <!-- REVERT -->
+            <div class="content-drag content-revert">
+                <div class="drag-revert drag-estilo">
+                    Ei,me arraste por ai!!
+                    Depois me solte, eu irei voltar ao ponto inicial.
+                </div>
+            </div>
+
+            <!-- GRID e SNAP -->
+            <div class="content-drag content-grid">
+                <div class="drag-grid drag-estilo drag-float">
+                    Ei,me arraste por ai!!
+                    Eu sou Snap = true
+                </div>
+                <div class="drag-grid1 drag-estilo drag-float">
+                    Ei,me arraste por ai!!
+                    Eu sou o grid [20,20]
+                </div>
+                <div class="clear"></div>
+                <p>O efeito Snap, permite que o item arrastado possa se "fundir" com outro iten existente na mesma div, ele meio que se organiza o mais fiel possível de outro item.</p>
+                <p>O grid cria um tipo de régua na hora do arraste, fazendo com que o iten seja arrastado de uma maneira mais fechada.</p>
+            </div>
+
+            <!-- FEEDBACK -->
+            <div class="content-drag content-feedback">
+                <div class="drag-feedback drag-estilo drag-float">
+                    Ei,me arraste por ai!!
+                    Eu sou o feedback.
+                </div>
+                <div class="drag-feedback1 drag-estilo drag-float">
+                    Ei,me arraste por ai!!
+                    Eu sou o feedback.
+                </div>
+            </div>
+
+            <!-- SORTABLE -->
+            <div class="content-drag content-sortable">
+                <ul style="margin-left: -41px;">
+                  <li class="drag-sortable1">Ei, me arraste!!</li>
+                </ul>
+                <ul class="drag-sortable" style="margin-left: -41px;">
+                  <li class="ui-state-default">Item 1</li>
+                  <li class="ui-state-default">Item 2</li>
+                  <li class="ui-state-default">Item 3</li>
+                  <li class="ui-state-default">Item 4</li>
+                  <li class="ui-state-default">Item 5</li>
+                </ul>
+            </div>
+        </div>
+    </div>    
+</div><!--CONTENT-HTML-->
+<script type="text/javascript">
+    /*-------------- DRAGGABLE ---------------*/
+    $(".drag-default").draggable(); // default
+
+    $(".drag-movement").draggable({ scroll : false,axis:"x" }); // Movement
+    $(".drag-movement1").draggable({ scroll : false,axis:"y" }); 
+    $(".drag-movement2").draggable({ containment:".container-drag",scroll : false });
+
+    $('.drag-cursor').draggable(); //curosr
+    $('.drag-cursor1').draggable({cursor: 'crosshair'});
+    $('.drag-cursor2').draggable({cursor: 'e-resize'});
+    $('.drag-cursor3').draggable({cursor: 'n-resize'});
+    $('.drag-cursor4').draggable({cursor: 'no-drop'});
+    $('.drag-cursor5').draggable({cursor: 'cell', cursorAt: { top: 56, left: 56 } });
+
+    $('.drag-delay').draggable({delay: 400 }); //delay
+    $( ".drag-delay1" ).draggable({ distance: 100 }); //distance
+
+    $(function() { //event
+        var $start_counter = $( "#event-start" ),
+          $drag_counter = $( "#event-drag" ),
+          $stop_counter = $( "#event-stop" ),
+          counts = [ 0, 0, 0 ];
+     
+        $( ".drag-event" ).draggable({
+          start: function() {
+            counts[ 0 ]++;
+            updateCounterStatus( $start_counter, counts[ 0 ] );
+          },
+          drag: function() {
+            counts[ 1 ]++;
+            updateCounterStatus( $drag_counter, counts[ 1 ] );
+          },
+          stop: function() {
+            counts[ 2 ]++;
+            updateCounterStatus( $stop_counter, counts[ 2 ] );
+          }
+        });
+     
+        function updateCounterStatus( $event_counter, new_count ) {
+          // first update the status visually...
+          if ( !$event_counter.hasClass( "ui-state-hover" ) ) {
+            $event_counter.addClass( "ui-state-hover" )
+              .siblings().removeClass( "ui-state-hover" );
+          }
+          // ...then update the numbers
+          $( "span.count", $event_counter ).text( new_count );
+        }
+    });
+
+    $(".drag-handle").draggable({ cancel: "p"});   //handle   handle: "p" => move pelo p
+
+    $(".drag-revert").draggable({ revert:true, scroll : false }); // revert
+
+    $(".drag-grid").draggable({ snap: true}); //snap
+    $(".drag-grid1").draggable({ grid: [20,20]}); //grid
+
+    $(".drag-feedback").draggable({ opacity: 0.7, helper: "clone"}); // feedback/helper
+    $(".drag-feedback1").draggable({ // feedback/helper
+        cursor: "move",
+        cursorAt: { top: -12, left: -20 },
+        helper: function( event ) {
+            return $( "<div class='ui-widget-header'>Olha a ajuda aqui!</div>" );
+        }
+    }); 
+
+    $(function() {
+        $( ".drag-sortable" ).sortable({
+          revert: true
+        });
+        $( ".drag-sortable1" ).draggable({
+          connectToSortable: ".drag-sortable",
+          helper: "clone",
+          revert: "invalid"
+        });
+        $( "ul, li" ).disableSelection();
+    });
+    
+    //carrega botoes menu
+    var slides = new Array();
+        slides[0] = $(".content-default"),
+        slides[1] = $(".content-movement"),
+        slides[2] = $(".content-cursor"),
+        slides[3] = $(".content-delay"),
+        slides[4] = $(".content-event"),
+        slides[5] = $(".content-handle"),
+        slides[6] = $(".content-revert"),
+        slides[7] = $(".content-grid"),
+        slides[8] = $(".content-feedback"),
+        slides[9] = $(".content-sortable");
+
+    botoesMenu(".container-drag",".menu-drag li",slides);    
+    hightlight();
+</script>
+

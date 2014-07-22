@@ -1,0 +1,196 @@
+<style>
+    .ui-progressbar {
+    position: relative;
+  }
+  .loading {
+    position: absolute;
+    left: 50%;
+    top: 4px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+  }
+  .progress-label {
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+  }
+ 
+</style>
+<div class="content-html">
+    <h1>Dialog</h1>
+    <hr class="hr" />
+    <div class="comentario_funcao">
+        <p>Esse efeito é o progressbar e como o nome ja diz é criada uma barra de progresso.</p>
+        <p>Seu código default é esse:
+            <pre><code class="hljs javascript">
+                $( ".progress-default" ).progressbar({
+                  value: 37
+                });
+            </code></pre>
+        </p>
+        <p>Veja os exemplos abaixo:</p>
+        
+        <div class="containerprogress">
+            <div class="progress-default">
+                <span><i>Progress bar Default</i></span>
+            	<div></div>
+            </div><br />
+            <div class="progress-animation">
+                <span><i>Progress bar Custom Animation</i></span>
+                <div><div class="loading">Carregando...</div></div>
+            </div><br />
+            <div class="progress-download">
+                <div id="dialog-progress" title="Dowload progressbar">
+                    <div class="progress-label">Download Iniciado...</div>
+                    <div id="progressbar-download"></div>
+                </div>
+                <span><i>Progress bar Download Dialog</i></span>
+                <div style="width:100%;">
+                <button id="downloadButton">Começar Download</button>
+                </div>
+            </div><br />
+            <div class="progress-confirmation">
+                <span><i>Indeterminate Value</i></span>
+                <div id="progressbar-confirm"></div>
+                <button id="numButton">Valor Randomico - determinado</button>
+                <button id="falseButton">Indeterminado</button>
+                <button id="colorButton">Cor Randomico</button>
+            </div><br />
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    //progress-bar default
+    $(".progress-default div").progressbar({
+        value: 40
+    });
+
+    //progress-bar custom animation
+ 
+    $(function() {
+        var progressbar = $( ".progress-animation div" ),
+          progressLabel = $( ".loading" );
+     
+        progressbar.progressbar({
+          value: false,
+          change: function() {
+            progressLabel.text( progressbar.progressbar( "value" ) + "%" );
+          },
+          complete: function() {
+            progressLabel.text( "Completo!" );
+          }
+        });
+     
+        function progress() {
+          var val = progressbar.progressbar( "value" ) || 0;
+     
+          progressbar.progressbar( "value", val + 2 );
+     
+          if ( val < 99 ) {
+            setTimeout( progress, 80 );
+          }
+        }
+     
+        setTimeout( progress, 2000 );
+    });
+    
+    
+    //progress-bar download dialog
+    $(function() {
+        var progressTimer,
+            progressbar = $( "#progressbar-download" ),
+            progressLabel = $( ".progress-label" ),
+            dialogButtons = [{
+            text: "Cancelar Download",
+            click: closeDownload
+          }],
+          dialog = $( "#dialog-progress" ).dialog({
+            autoOpen: false,
+            closeOnEscape: false,
+            resizable: false,
+            buttons: dialogButtons,
+            open: function() {
+              progressTimer = setTimeout( progress, 2000 );
+            },
+            beforeClose: function() {
+              downloadButton.button( "option", {
+                disabled: false,
+                label: "Inicio Download"
+              });
+            }
+          }),
+          downloadButton = $( "#downloadButton" )
+            .button()
+            .on( "click", function() {
+              $( this ).button( "option", {
+                disabled: true,
+                label: "Baixando..."
+              });
+              dialog.dialog( "open" );
+            });
+     
+        progressbar.progressbar({
+          value: false,
+          change: function() {
+            progressLabel.text( "Current Progress: " + progressbar.progressbar( "value" ) + "%" );
+          },
+          complete: function() {
+            progressLabel.text( "Completo!" );
+            dialog.dialog( "option", "buttons", [{
+              text: "Close",
+              click: closeDownload
+            }]);
+            $(".ui-dialog button").last().focus();
+          }
+        });
+     
+        function progress() {
+          var val = progressbar.progressbar( "value" ) || 0;
+     
+          progressbar.progressbar( "value", val + Math.floor( Math.random() * 3 ) );
+     
+          if ( val <= 99 ) {
+            progressTimer = setTimeout( progress, 50 );
+          }
+        }
+     
+        function closeDownload() {
+          clearTimeout( progressTimer );
+          dialog
+            .dialog( "option", "buttons", dialogButtons )
+            .dialog( "close" );
+          progressbar.progressbar( "value", false );
+          progressLabel
+            .text( "Iniciando download..." );
+          downloadButton.focus();
+        }
+    });
+
+    //progress-bar indeterminate confirmation
+    $(function() {
+        $( "#progressbar-confirm" ).progressbar({
+          value: false
+        });
+        $( "button" ).on( "click", function( event ) {
+          var target = $( event.target ),
+            progressbar = $( "#progressbar-confirm" ),
+            progressbarValue = progressbar.find( ".ui-progressbar-value" );
+     
+          if ( target.is( "#numButton" ) ) {
+            progressbar.progressbar( "option", {
+              value: Math.floor( Math.random() * 100 )
+            });
+          } else if ( target.is( "#colorButton" ) ) {
+            progressbarValue.css({
+              "background": '#' + Math.floor( Math.random() * 16777215 ).toString( 16 )
+            });
+          } else if ( target.is( "#falseButton" ) ) {
+            progressbar.progressbar( "option", "value", false );
+          }
+        });
+    });
+
+
+    hightlight();
+
+    
+</script>

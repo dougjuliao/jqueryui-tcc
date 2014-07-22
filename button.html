@@ -1,0 +1,67 @@
+<div class="content-html">
+    <h1>Button</h1>
+    <hr class="hr" />
+    <div class="comentario_funcao">
+        <p>O efeito button como o nome diz, cria botões personalizados e nos auxiliam com seus efeitos simples e bem feitos.</p>
+        <p>O código para adicionar esse efeito seria:
+            <pre><code class=" hljs javascript">
+                $(function(){
+                    $(".botao-ui").button();
+                });
+            </code></pre>
+            <i>Obs.: esse será o button default</i>
+        </p>
+        <p>Abaixo segue alguns exemplos:</p>
+        <div class="botao-content">
+            <ul>
+                <li class="default-botao">Default</li>
+                <li><input type="checkbox" id="checkbox-botao"><label for="checkbox-botao">Checkbox</label></li>
+                <li class="icon-botao">Icon</li>
+                <li class="radio-botao">
+                    <input type="radio" id="radio1" name="radio"><label for="radio1">um</label>
+                    <input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">dois</label>
+                    <input type="radio" id="radio3" name="radio"><label for="radio3">três</label>
+                </li>
+                <div>
+                    <li class="split-botao" style="margin-left:20px;">Split</li>
+                </div>
+                <ul class="options_botao">
+                    <li><a href="#">Open...</a></li>
+                    <li><a href="#">Save</a></li>
+                    <li><a href="#">Delete</a></li>
+                </ul>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    /*-------------- BUTTON ---------------*/
+    $(".default-botao").button();//default
+    $("#checkbox-botao").button();//checkbox
+    $(".icon-botao").button({//icon
+        icons: {
+            primary: "ui-icon-locked"
+        }
+    });
+    $(".radio-botao").buttonset();
+    $(function() {//split
+        $(".split-botao").button({
+            icons: {
+                primary: "ui-icon-triangle-1-s"
+            }
+        }).click(function(){
+            var menu = $( this ).parent().next().show().position({
+                my: "left top",
+                at: "left bottom",
+                of: this
+            });
+            $( document ).one( "click", function() {
+                menu.hide();
+            });
+            return false;
+        }).parent().buttonset().next().hide().menu();
+    });
+
+    hightlight();
+</script>

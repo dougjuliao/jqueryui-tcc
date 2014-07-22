@@ -1,0 +1,48 @@
+<style>
+	#feedback { font-size: 1.4em; }
+  	#selectable_content .ui-selecting { background: #FECA40; }
+  	#selectable_content .ui-selected { background: #F39814; color: white; }
+  	#selectable_content { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  	#selectable_content li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+</style>
+<div class="content-html">
+    <h1>Selectable</h1>
+    <hr class="hr" />
+    <div class="comentario_funcao">
+        <p>Com esse efeito é possível fazer a seleção de vários elementos</p>
+        <p>O código default seria:
+        <pre><code class=" hljs javascript">
+            $( "#selectable" ).selectable();
+        </code></pre>
+        </p>
+        
+        <div class="clear"></div>
+        <p id="feedback">
+			<span>Itens selecionados:</span> <span id="select-result"> :(  nada ainda </span>.
+		</p>
+		 
+		<ol id="selectable_content">
+		  	<li class="ui-widget-content">Item 1</li>
+		  	<li class="ui-widget-content">Item 2</li>
+		  	<li class="ui-widget-content">Item 3</li>
+		  	<li class="ui-widget-content">Item 4</li>
+		  	<li class="ui-widget-content">Item 5</li>
+		  	<li class="ui-widget-content">Item 6</li>
+		</ol>
+    </div>
+</div>
+<script type="text/javascript">
+    
+    /*-------------- RESIZABLE ---------------*/
+    $( "#selectable_content" ).selectable({
+      stop: function() {
+        var result = $( "#select-result" ).empty();
+        $( ".ui-selected", this ).each(function() {
+          var index = $( "#selectable_content li" ).index( this );
+          result.append( " #" + ( index + 1 ) );
+        });
+      }
+    });
+
+    hightlight();
+</script>

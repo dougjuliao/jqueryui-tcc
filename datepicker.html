@@ -1,0 +1,39 @@
+<div class="content-html">
+    <h1>Datepicker</h1>
+    <hr class="hr" />
+    <div class="comentario_funcao">
+        <p>Esse efeito nos permite escolher uma data para ser colocada no input, é um calendário do jquery ui.</p>
+        <p>Para usar o datepicker é preciso adicionar esse código:
+            <pre><code class="hljs javascript">
+                $('.datepicker-input').datepicker();
+            </code></pre>
+        </p>
+        <p>Data1:<input type="text" class="datepicker-input"><i> Esse é o datepicker default</i></p>
+        <p>Data2:<input type="text" class="datepicker-input2"><i> Esse é o datepicker com display button</i></p>
+        <p>Data3:<input type="text" class="datepicker-input3"><i> Esse é o datepicker com display de mês e ano</i></p>
+        <p>Data4:<input type="text" class="datepicker-input4"><i> Esse é o datepicker com display Multiplo</i></p>
+        <p>Data5:<input type="text" class="datepicker-input5"><i> Esse é o datepicker com Icone</i></p>
+    </div>
+</div>
+<script type="text/javascript">
+    /*-------------- DATEPICKER ---------------*/
+    $('.datepicker-input').datepicker();//dafault
+    $('.datepicker-input2').datepicker({//com botões
+        showButtonPanel: true
+    });
+    $('.datepicker-input3').datepicker({// display mês e ano
+        changeMonth:true,
+        changeYear:true
+    });
+    $('.datepicker-input4').datepicker({// display mês e ano total(multiple)
+        numberOfMonths: 3,
+        showButtonPanel: true
+    });
+    $('.datepicker-input5').datepicker({// icone
+        showOn: "button",
+        buttonImage: "img/calendar.gif",
+        buttonImageOnly: true
+    });
+
+    hightlight();
+</script>

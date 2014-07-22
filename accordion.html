@@ -1,0 +1,419 @@
+<div class="content-html">
+    <h1>Accordion</h1>
+    <hr class="hr"/>
+    <div class="comentario_funcao">
+        <p>Efeito accordion do jQuery UI - Abas selecionáveis para mostrar e esconder conteúdo.</p>
+        <p>O código default do accordeon ficaria assim:
+            <pre><code class="hljs javascript">
+                 $('#id-seletor').accordion();
+            </code></pre>
+        </p>
+        <p>Clique nos botões abaixo para ver o efeito.</p>
+        <div class="menu-accordion">
+            <ul>
+                <li class="default" id="0">Default</li>
+                <li class="collapse" id="1">Collapse</li>
+                <li class="customize" id="2">Customize icons</li>
+                <li class="fill" id="3">Fill Space</li>
+                <li class="no-height" id="4">No auto hight</li>
+                <li class="open-hover" id="5">Open Hover</li>
+                <li class="sortable-aba" id="6">Sortable</li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="hide-accordion">
+        <div id="accordion-default"><!--ACCORDION DEFAULT-->
+            <h3>Esse é o accordion default</h3>
+            <div>
+                <p>
+                    Aqui nós só temos o efeito accordion do jQuery UI default, é o básico e utilizando a biblioteca
+                    só é preciso chamar o efeito com esse código:
+                    <pre> $('#id-seletor').accordion();</pre>
+                </p>
+            </div>
+            <h3>Texto 2</h3>
+            <div>
+                <p>
+                    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                    suscipit faucibus urna.
+                </p>
+            </div>
+            <h3>Texto 3</h3>
+            <div>
+                <p>
+                    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero.
+            </div>
+            <h3>Texto 4</h3>
+            <div>
+                <p>
+                    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                    mauris vel est.
+                </p>
+            </div>
+        </div>
+        <div id="accordion-collapse"><!--ACCORDION COLLAPSE-->
+            <h3>Esse é o accordion collapse</h3>
+            <div>
+                <p>
+                    Esse efeito permite que todas as abas fiquem fechadas, podendo clicar na aba aberta e fechar,
+                    para adicionar esse efeito precisamos colocar a opção <i>collapsible</i> como true.
+                <pre>
+                $('#id-seletor').accordion({
+                    collapsible:true
+                });
+                </pre>
+                </p>
+            </div>
+            <h3>Texto 2</h3>
+            <div>
+                <p>
+                    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                    suscipit faucibus urna.
+                </p>
+            </div>
+            <h3>Texto 3</h3>
+            <div>
+                <p>
+                    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero.
+            </div>
+            <h3>Texto 4</h3>
+            <div>
+                <p>
+                    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                    mauris vel est.
+                </p>
+            </div>
+        </div>
+        <div id="accordion-custom-icon"><!--ACCORDION CUSTOMIZE-ICON-->
+            <h3>Esse é o accordion Customize icons</h3>
+            <div>
+                <p>
+                    Esse efeito permite modificar o icone das abas ou retirá-los, no css do jquery ui encontramos muitos icones usados,
+                    para criar seu próprio  icone é preciso utilizá-lo com o css.
+            <pre>
+            $('#id-seletor').accordion({
+                icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" }
+            });
+            </pre>
+                </p>
+            </div>
+            <h3>Texto 2</h3>
+            <div>
+                <p>
+                    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                    suscipit faucibus urna.
+                </p>
+            </div>
+            <h3>Texto 3</h3>
+            <div>
+                <p>
+                    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero.
+            </div>
+            <h3>Texto 4</h3>
+            <div>
+                <p>
+                    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                    mauris vel est.
+                </p>
+            </div>
+        </div>
+        <div class="accordion-resize" class="ui-widget-content"><!--ACCORDION FILL SPACE - RESISABLE-->
+            <div id="accordion-fill">
+                <h3>Esse é o accordion Fill Space</h3>
+                <div>
+                    <p>
+                        Esse efeito permite que o accordion seja redimensionado,
+                        para adicionar esse efeito precisamos colocar a opção <i>heightStyle</i> como "fill","auto" ou "content":
+                    <pre>
+                    $('#id-seletor').accordion({
+                        heightStyle:"fill"
+                    });
+                    $( "#accordion-resize" ).resizable({
+                        minHeight: 140,
+                        minWidth: 200,
+                        resize: function() {
+                            $( "#accordion" ).accordion( "refresh" );
+                        }
+                    });
+                    </pre>
+                    </p>
+                </div>
+                <h3>Texto 2</h3>
+                <div>
+                    <p>
+                        Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                        purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                        suscipit faucibus urna.
+                    </p>
+                </div>
+                <h3>Texto 3</h3>
+                <div>
+                    <p>
+                        Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                        Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero.
+                </div>
+                <h3>Texto 4</h3>
+                <div>
+                    <p>
+                        Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                        et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                        mauris vel est.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="accordion-auto-height"><!--ACCORDION NO AUTO HEIGHT-->
+            <h3>Esse é o accordion no auto height</h3>
+            <div>
+                <p>
+                    Esse efeito faz com que o accordion utilize o tamanho do conteudo em toda a sua area.
+            <pre>
+            $('#accordion-auto-height').accordion({
+                heightStyle : "content"
+            });
+            </pre>
+                </p>
+            </div>
+            <h3>Texto 2</h3>
+            <div>
+                <p>
+                    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                    suscipit faucibus urna.
+                </p>
+            </div>
+            <h3>Texto 3</h3>
+            <div>
+                <p>
+                    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero.
+            </div>
+            <h3>Texto 4</h3>
+            <div>
+                <p>
+                    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                    mauris vel est.
+                </p>
+            </div>
+        </div>
+        <div id="accordion-hover"><!--ACCORDION NO AUTO HEIGHT-->
+            <h3>Esse é o accordion open hoverintent</h3>
+            <div>
+                <p>
+                    Esse efeito abre as abas do accordion com o passar do mouse(hover) o código ficaria assim.
+            <pre>
+            $("#accordion-hover").accordion({
+                event: "hoverintent"
+            });
+            </pre>
+                </p>
+            </div>
+            <h3>Texto 2</h3>
+            <div>
+                <p>
+                    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                    suscipit faucibus urna.
+                </p>
+            </div>
+            <h3>Texto 3</h3>
+            <div>
+                <p>
+                    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero.
+            </div>
+            <h3>Texto 4</h3>
+            <div>
+                <p>
+                    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                    mauris vel est.
+                </p>
+            </div>
+        </div>
+        <div id="accordion-sortable"><!--ACCORDION SORTABLE-->
+            <div class="group">
+                <h3>Esse é o accordion sortable</h3>
+                <div>
+                    <p>
+                        Esse efeito permite a alteração da ordem das abas, para implementar esse efeito basta usar esse codigo:
+                <pre style="max-height:135px; overflow:auto;">
+                $("#accordion-sortable").accordion({
+                    header: "> div > h3"
+                 })
+                 .sortable({
+                    axis: "y",
+                    handle: "h3",
+                    stop: function( event, ui ) {
+                        ui.item.children( "h3" ).triggerHandler( "focusout" );
+                    }
+                 });
+                </pre>
+                    </p>
+                </div>
+            </div>
+            <div class="group">
+                <h3>Texto 2</h3>
+                <div>
+                    <p>
+                        Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                        purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                        suscipit faucibus urna.
+                    </p>
+                </div>
+            </div>
+            <div class="group">
+                <h3>Texto 3</h3>
+                <div>
+                    <p>
+                        Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                        Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero.
+                </div>
+            </div>
+            <div class="group">
+                <h3>Texto 4</h3>
+                <div>
+                    <p>
+                        Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                        et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                        mauris vel est.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div><!--HIDE ACCORDION-->
+</div><!--CONTENT-HTML-->
+<script type="text/javascript">
+
+    /*-------------- ACCORDION ---------------*/
+    $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+
+    $("#accordion-default").accordion(); //default
+    $("#accordion-collapse").accordion({ //collapse
+        collapsible:true
+    });
+    $("#accordion-custom-icon").accordion({ //custom icons
+        icons:{ "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" },
+        collapsible:true
+    });
+
+    $("#accordion-fill").accordion({ //resize - fill
+        collapsible:true,
+        heightStyle: "fill"
+    });
+    $(".accordion-resize").resizable({
+        minWidth:180,
+        minHeight:250,
+
+        resize:function(){
+            $("#accordion-fill").accordion("refresh",{collapsible:true});
+        }
+    });
+    $("#accordion-auto-height").accordion({//No Auto Height
+        heightStyle : "content"
+    });
+
+    // função para criar o accordion com hover
+    $.event.special.hoverintent = {
+        setup: function() {
+            $( this ).bind( "mouseover", jQuery.event.special.hoverintent.handler );
+        },
+        teardown: function() {
+            $( this ).unbind( "mouseover", jQuery.event.special.hoverintent.handler );
+        },
+        handler: function( event ) {
+            var currentX, currentY, timeout,
+                args = arguments,
+                target = $( event.target ),
+                previousX = event.pageX,
+                previousY = event.pageY;
+
+            function track( event ) {
+                currentX = event.pageX;
+                currentY = event.pageY;
+            }
+
+            function clear() {
+                target
+                    .unbind( "mousemove", track )
+                    .unbind( "mouseout", clear );
+                clearTimeout( timeout );
+            }
+
+            function handler() {
+                var prop,
+                    orig = event;
+
+                if ( ( Math.abs( previousX - currentX ) +
+                    Math.abs( previousY - currentY ) ) < 7 ) {
+                    clear();
+
+                    event = $.Event( "hoverintent" );
+                    for ( prop in orig ) {
+                        if ( !( prop in event ) ) {
+                            event[ prop ] = orig[ prop ];
+                        }
+                    }
+                    // Prevent accessing the original event since the new event
+                    // is fired asynchronously and the old event is no longer
+                    // usable (#6028)
+                    delete event.originalEvent;
+
+                    target.trigger( event );
+                } else {
+                    previousX = currentX;
+                    previousY = currentY;
+                    timeout = setTimeout( handler, 100 );
+                }
+            }
+
+            timeout = setTimeout( handler, 100 );
+            target.bind({
+                mousemove: track,
+                mouseout: clear
+            });
+        }
+    };
+
+    $( "#accordion-hover" ).accordion({
+        event: "hoverintent"
+    });
+
+    $("#accordion-sortable").accordion({//Accordion sortable
+        header: "> div > h3",
+        heightStyle : "content"
+    }).sortable({
+            axis: "y",
+            handle: "h3",
+            stop: function( event, ui ) {
+                ui.item.children( "h3" ).triggerHandler( "focusout" );
+            }
+        });
+
+    //carrega botoes menu
+    //var arrays = ["#accordion-default","#accordion-collapse","#accordion-custom-icon",".accordion-resize","#accordion-auto-height","#accordion-hover","#accordion-sortable"];
+    var arrays = new Array();
+        arrays[0] = $("#accordion-default"),
+        arrays[1] = $("#accordion-collapse"),
+        arrays[2] = $("#accordion-custom-icon"),
+        arrays[3] = $(".accordion-resize"),
+        arrays[4] = $("#accordion-auto-height"),
+        arrays[5] = $("#accordion-hover"),
+        arrays[6] = $("#accordion-sortable");
+        
+    botoesMenu(".hide-accordion",".menu-accordion li",arrays);
+    hightlight();
+    
+</script>
+
