@@ -32,7 +32,7 @@ $(document).ready(function(){
     }
 
 
-<<<<<<< HEAD
+
 /*  //////////////////////////
     // MENU BOTOES INTERNOS //
     //////////////////////////  
