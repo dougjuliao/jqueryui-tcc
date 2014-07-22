@@ -36,12 +36,7 @@ $(document).ready(function(){
 /*  //////////////////////////
     // MENU BOTOES INTERNOS //
     //////////////////////////  
-        Parametros de função:
-=======
-/* 
-    Parametros de função MENU BOTOES INTERNOS
-
->>>>>>> origin/master
+    
         hide: será o id ou class usado para esconder e mostrar o conteúdo
         menuLi: pegara o seletor + li .
         slides: retorna um array com os conteúdos específicos.
