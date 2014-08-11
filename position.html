@@ -1,3 +1,16 @@
+<style>
+	#hide-image {
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+    margin-top:10px;
+  }
+ 
+  .img {
+    position: absolute;
+  	margin-left:10px;
+  }
+</style>
 <div class="content-html">
     <h1>Position</h1>
     <hr class="hr"/>
@@ -21,74 +34,84 @@
         </ul>
     </div>
     <div class="clear"></div>
-    <div class="hide-position">
-    	<div id="parent">
-		  <p>
-		  This is the position parent element.
-		  </p>
-		</div>
+	<div class="hide-all">    
+	    <div class="hide-position">
+	    	<div id="parent">
+			  <p>
+			  This is the position parent element.
+			  </p>
+			</div>
+			 
+			<div class="positionable" id="positionable1">
+			  <p>
+			  to position
+			  </p>
+			</div>
+			 
+			<div class="positionable" id="positionable2">
+			  <p>
+			  to position 2
+			  </p>
+			</div>
+			 
+			<div style="padding: 20px; margin-top: 75px;">
+			  position...
+			  <div style="padding-bottom: 20px;">
+			    <b>my:</b>
+			    <select id="my_horizontal">
+			      <option value="left">left</option>
+			      <option value="center">center</option>
+			      <option value="right">right</option>
+			    </select>
+			    <select id="my_vertical">
+			      <option value="top">top</option>
+			      <option value="center">center</option>
+			      <option value="bottom">bottom</option>
+			    </select>
+			  </div>
+			  <div style="padding-bottom: 20px;">
+			    <b>at:</b>
+			    <select id="at_horizontal">
+			      <option value="left">left</option>
+			      <option value="center">center</option>
+			      <option value="right">right</option>
+			    </select>
+			    <select id="at_vertical">
+			      <option value="top">top</option>
+			      <option value="center">center</option>
+			      <option value="bottom">bottom</option>
+			    </select>
+			  </div>
+			  <div style="padding-bottom: 20px;">
+			    <b>collision:</b>
+			    <select id="collision_horizontal">
+			      <option value="flip">flip</option>
+			      <option value="fit">fit</option>
+			      <option value="flipfit">flipfit</option>
+			      <option value="none">none</option>
+			    </select>
+			    <select id="collision_vertical">
+			      <option value="flip">flip</option>
+			      <option value="fit">fit</option>
+			      <option value="flipfit">flipfit</option>
+			      <option value="none">none</option>
+			    </select>
+			  </div>
+			</div>
+	    </div>
+	    <div id="hide-image">
+		  <img class="img" src="img/1.jpg" height="140" width="140">
+		  <img class="img" src="img/2.jpg" height="246" width="205">
+		  <img class="img" src="img/3.jpg" height="225" width="225">
 		 
-		<div class="positionable" id="positionable1">
-		  <p>
-		  to position
-		  </p>
+		  <a id="previous" href="#"><<</a>
+		  <a id="next" href="#">>></a>
 		</div>
-		 
-		<div class="positionable" id="positionable2">
-		  <p>
-		  to position 2
-		  </p>
-		</div>
-		 
-		<div style="padding: 20px; margin-top: 75px;">
-		  position...
-		  <div style="padding-bottom: 20px;">
-		    <b>my:</b>
-		    <select id="my_horizontal">
-		      <option value="left">left</option>
-		      <option value="center">center</option>
-		      <option value="right">right</option>
-		    </select>
-		    <select id="my_vertical">
-		      <option value="top">top</option>
-		      <option value="center">center</option>
-		      <option value="bottom">bottom</option>
-		    </select>
-		  </div>
-		  <div style="padding-bottom: 20px;">
-		    <b>at:</b>
-		    <select id="at_horizontal">
-		      <option value="left">left</option>
-		      <option value="center">center</option>
-		      <option value="right">right</option>
-		    </select>
-		    <select id="at_vertical">
-		      <option value="top">top</option>
-		      <option value="center">center</option>
-		      <option value="bottom">bottom</option>
-		    </select>
-		  </div>
-		  <div style="padding-bottom: 20px;">
-		    <b>collision:</b>
-		    <select id="collision_horizontal">
-		      <option value="flip">flip</option>
-		      <option value="fit">fit</option>
-		      <option value="flipfit">flipfit</option>
-		      <option value="none">none</option>
-		    </select>
-		    <select id="collision_vertical">
-		      <option value="flip">flip</option>
-		      <option value="fit">fit</option>
-		      <option value="flipfit">flipfit</option>
-		      <option value="none">none</option>
-		    </select>
-		  </div>
-		</div>
-    </div>
+	</div>	
 </div>
 <script type="text/javascript">
 
-	$('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+	
 	//position
 	function position() {
       $( ".positionable" ).position({
@@ -114,7 +137,7 @@
 		  return this.position({
 			my: "right middle",
 			at: "left+25 middle",
-			of: "#container",
+			of: "#hide-image",
 			collision: "none",
 			using: using
 		  });
@@ -123,7 +146,7 @@
 		  return this.position({
 			my: "left middle",
 			at: "right-25 middle",
-			of: "#container",
+			of: "#hide-image",
 			collision: "none",
 			using: using
 		  });
@@ -132,46 +155,51 @@
 		  return this.position({
 			my: "center middle",
 			at: "center middle",
-			of: "#container",
+			of: "#hide-image",
 			using: using
 		  });
 		};
 	 
-		$( "img:eq(0)" ).left();
-		$( "img:eq(1)" ).center();
-		$( "img:eq(2)" ).right();
+		$( ".img:eq(0)" ).left();
+		$( ".img:eq(1)" ).center();
+		$( ".img:eq(2)" ).right();
 	 
 		function animate( to ) {
 		  $( this ).stop( true, false ).animate( to );
 		}
 		function next( event ) {
 		  event.preventDefault();
-		  $( "img:eq(2)" ).center( animate );
-		  $( "img:eq(1)" ).left( animate );
-		  $( "img:eq(0)" ).right().appendTo( "#container" );
+		  $( ".img:eq(2)" ).center( animate );
+		  $( ".img:eq(1)" ).left( animate );
+		  $( ".img:eq(0)" ).right().appendTo( "#hide-image" );
 		}
 		function previous( event ) {
 		  event.preventDefault();
-		  $( "img:eq(0)" ).center( animate );
-		  $( "img:eq(1)" ).right( animate );
-		  $( "img:eq(2)" ).left().prependTo( "#container" );
+		  $( ".img:eq(0)" ).center( animate );
+		  $( ".img:eq(1)" ).right( animate );
+		  $( ".img:eq(2)" ).left().prependTo( "#hide-image" );
 		}
 		$( "#previous" ).click( previous );
 		$( "#next" ).click( next );
 	 
-		$( "img" ).click(function( event ) {
-		  $( "img" ).index( this ) === 0 ? previous( event ) : next( event );
+		$( ".img" ).click(function( event ) {
+		  $( ".img" ).index( this ) === 0 ? previous( event ) : next( event );
 		});
 	 
 		$( window ).resize(function() {
-		  $( "img:eq(0)" ).left( animate );
-		  $( "img:eq(1)" ).center( animate );
-		  $( "img:eq(2)" ).right( animate );
+		  $( ".img:eq(0)" ).left( animate );
+		  $( ".img:eq(1)" ).center( animate );
+		  $( ".img:eq(2)" ).right( animate );
 		});
 	});
 	
  
     position();
 	
-	hightlight();
+	var arrays = new Array();
+        arrays[0] = $(".hide-position"),
+        arrays[1] = $("#hide-image");
+        
+    botoesMenu(".hide-all",".menu-accordion li",arrays);
+    hightlight();
 </script>        
