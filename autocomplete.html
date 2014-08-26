@@ -1,0 +1,78 @@
+
+<div class="content-html">
+    <h1>Autocomplete</h1>
+    <hr class="hr" />
+    <div class="comentario_funcao">
+        <p>Esse efeito é usado para auto completar campos que estão sendo digitados.</p>
+        <p>O código para o default seria assim:
+            <pre style="max-height: 320px"><code class="hljs javascript">
+                $(function() {
+                    var availableTags = [ //Textos que irão se auto completar.
+                        "ActionScript",
+                        "AppleScript",
+                        "Asp",
+                        "BASIC",
+                        "C",
+                        "C++",
+                        "Clojure",
+                        "COBOL",
+                        "ColdFusion",
+                        "Erlang",
+                        "Fortran",
+                        "Groovy",
+                        "Haskell",
+                        "Java",
+                        "JavaScript",
+                        "Lisp",
+                        "Perl",
+                        "PHP",
+                        "Python",
+                        "Ruby",
+                        "Scala",
+                        "Scheme"
+                    ];
+                    $( "#tags" ).autocomplete({
+                        source: availableTags
+                    });
+                });
+            </code></pre>
+        </p>
+        <p>Aqui irei mostrar apenas o default, caso queira se aprofundar nessa função veja no próprio site do jQuery UI <a target="_blank" href="https://jqueryui.com/autocomplete/">Aqui</a></p>
+        <p>Exemplo Autocomplete default:</p>
+        <label for="autocomplete-botao">autocomplete: </label>
+        <input id="autocomplete-botao">
+    </div>
+</div>
+<script type="text/javascript">
+     /*-------------- AUTOCOMPLETE ---------------*/
+    $(function() {
+        var availableTags = [
+            "ActionScript",
+            "AppleScript",
+            "Asp",
+            "BASIC",
+            "C",
+            "C++",
+            "Clojure",
+            "COBOL",
+            "ColdFusion",
+            "Erlang",
+            "Fortran",
+            "Groovy",
+            "Haskell",
+            "Java",
+            "JavaScript",
+            "Lisp",
+            "Perl",
+            "PHP",
+            "Python",
+            "Ruby",
+            "Scala",
+            "Scheme"
+        ];
+        $( "#autocomplete-botao" ).autocomplete({
+            source: availableTags
+        });
+    });
+    hightlight();
+</script>

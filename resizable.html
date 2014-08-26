@@ -1,0 +1,36 @@
+<style>
+  	.box-resizable { width: 150px; height: 150px; padding: 0.5em; border:1px solid #ccc; }
+  	.box-resizable h3 { text-align: center; margin: 0; }
+  	.ui-resizable-helper { border: 1px dotted gray; }	
+</style>
+<div class="content-html">
+    <h1>Resizable</h1>
+    <hr class="hr" />
+    <div class="comentario_funcao">
+        <p>Com esse efeito é possível redimensionar uma div</p>
+        <p>O código para usar esse efeito:
+        <pre><code class=" hljs javascript">
+            
+              $( ".box-resizable" ).resizable({
+              		animate: true
+              });
+              
+        </code></pre>
+        </p>
+        
+        <div class="clear"></div>
+        <div class="box-resizable">
+        	<h3 class="ui-widget-header">Resizable com Animate</h3>
+            Essa é uma caixa de teste me redimensione ;).
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    
+    /*-------------- RESIZABLE ---------------*/
+    $( ".box-resizable" ).resizable({
+	  	animate: true
+	 });
+
+    hightlight();
+</script>

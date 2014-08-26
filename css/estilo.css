@@ -1,0 +1,487 @@
+
+body{
+	margin-top: 10px;
+	color: black;
+    background-color:#E9E8CD;
+	font: 14px/1.2 "Helvetica Neue", Helvetica, Arial, sans-serif ;
+}
+#geral{
+	margin:0 auto;
+	width:1000px;
+    height:774px;
+	text-align: left;
+	position:relative;
+}
+.conteudo{
+	margin:10px 15px;
+}
+/*-----------------<UTILIDADES>------------------------------*/
+.textura-fundo{
+	background: #f7f3de url(images/ui-bg_fine-grain_15_f7f3de_60x60.png) 50% 50% repeat;
+}
+.clear{
+	clear:both;
+}
+.hr{
+    background-image: url(../img/hr.png);
+    height: .35em;
+    border-radius: 4px;
+    margin: 0.75em 3px;
+}
+input{
+    border: 2px solid #BDA49F;
+    border-radius: 6px;
+    padding: 3px;
+}
+/*-----------------</UTILIDADES>------------------------------*/
+/*-----------------<HEADER>------------------------------*/
+header{
+	background: #6e4f1c url(images/ui-bg_diagonal-maze_20_6e4f1c_10x10.png) 50% 50% repeat;
+	border-radius:6px;
+	box-shadow: 5px 7px 11px #B3B3B3;
+}
+header img{
+	margin:8px 0 0 8px;
+	width: 180px;
+    float:left;
+}
+header h2{
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+    width: 423px;
+    float: left;
+    margin: 19px 100px;
+}
+
+.barra-progresso{
+	margin-bottom:0;
+	border: 1px solid #fff;
+}
+/*-----------------</HEADER>------------------------------*/
+
+/*-----------------<SECTION>------------------------------*/
+section{
+	border-radius:6px;
+    height: 701px;
+	background-color:#fff;
+	box-shadow: 5px 7px 11px #B3B3B3;
+}
+.conteudo-section{
+    padding: 2px 13px 0 14px;
+}
+.conteudo-section h1{
+    font-size: 36px;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif ;
+}
+.indice{
+	padding-bottom: 9px;
+	margin-left: 9px;
+    float:left;
+}
+.indice a, ul li{
+	text-decoration: none; 
+	list-style: none;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.indice li{
+    border-bottom: 2px solid #F3F3F3;
+    border-radius: 6px;
+    border-left:2px solid #FAA523;
+}
+.indice .ui-widget-content{
+	background:none;
+    border:none;
+} 
+#conteudo-section-direita{
+    float: left;
+    width: 837px;
+
+    margin-left: 0px;
+    margin-top: 1px;
+    height: 644px;
+    border-radius: 6px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-left: 2px solid #654b24;
+}
+.content-html h1{
+    margin-left: 12px;
+}
+.comentario_funcao{
+    margin-left: 12px;
+    margin-right: 12px;
+}
+#menu-indice .current-menu a{
+    border: 1px solid #654b24;
+    border-radius:6px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    margin:-1px;
+    background: #654b24 url(images/ui-bg_fine-grain_65_654b24_60x60.png) 50% 50% repeat;
+    color: #ffffff !important;
+}
+.comentario_funcao pre{
+    max-height: 94px;
+    overflow: auto;
+    border-left: 4px solid #FAA523;
+}
+.img-apresentacao{
+    background-color: rgba(101, 75, 36, 0.43);
+    padding: 6px;
+    border-radius: 5px;
+}
+.img-apresentacao img{
+    margin-left: 40px;
+    padding: 6px;
+    vertical-align: middle;
+    width:200px;
+}
+.img-apresentacao img:hover{
+    transition: all 0.7s;
+    box-shadow: 3px 3px 6px 1px #615858;
+    -moz-box-shadow: 3px 3px 6px 1px #615858;
+}
+.footer-apresentacao{
+    margin-top: 82px;
+}
+/*-----------------</SECTION>------------------------------*/
+/*-----------------<FOOTER>------------------------------*/
+footer{
+	background: #eceadf url(images/ui-bg_fine-grain_10_eceadf_60x60.png) 50% 50% repeat;
+	padding: 1px;
+	border-radius: 6px;
+	box-shadow: 5px 7px 11px #B3B3B3;
+}
+.conteudo-footer{
+	margin:8px;
+}
+.botao-navegar .ui-button-text-only .ui-button-text {
+	padding: 0.1em 0.2em;
+
+}
+.botao-anterior{
+	float:left;
+}
+.botao-proximo{
+	float:left;
+}
+.botao-reload .ui-button-text-only .ui-button-text {
+	padding: 0.1em 0.2em;
+}
+.botao-reload{
+	float: right;
+}
+/*-----------------</FOOTER>------------------------------*/
+/*--PAGE ACCORDION----------*/
+
+/* menu accordion */
+.menu-accordion li{
+    float: left;
+    color: #474747;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 3px 3px 5px -2px #3F3030;
+    -moz-box-shadow: 5px 9px 8px -5px #3F3030;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: 6px;
+}
+.menu-accordion li:hover{
+    background-color: #FAA523;
+    color: #fff;
+}
+.background-menu li{
+    background-color: #FAA523;
+}
+.background-active{
+    background-color: #FAA523 !important;
+    color:#ffffff !important;
+}
+/* ACCORDION-DEFAULT */
+#accordion-default{
+    margin: 0.75em 3px;
+    /*display:none;*/
+}
+#accordion-default pre{
+    margin-left:-11px;
+}
+/* ACCORDION-COLLAPSE */
+#accordion-collapse{
+    margin: 0.75em 3px;
+    /*display:none;*/
+}
+#accordion-collapse pre{
+    margin-left:-107px;
+}
+/* ACCORDION-CUSTOMIZE-ICONS */
+#accordion-custom-icon{
+    margin: 0.75em 3px;
+}
+/* ACCORDION-RESIZE */
+.accordion-resize{
+    margin: 0.75em 3px;
+    border: 2px solid #000;
+    width:600px;
+    height:200px;
+    border-radius: 8px;
+    /*display:none;*/
+}
+#accordion-fill pre{
+    margin-left:-107px;
+}
+/* ACCORDION - NO AUTO HEIGHT */
+#accordion-auto-height{
+    margin: 0.75em 3px;
+}
+/* ACCORDION - OPEN HOVER */
+#accordion-hover{
+    margin: 0.75em 3px;
+}
+/* ACCORDION - SORTABLE */
+#accordion-sortable{
+    margin: 0.75em 3px;
+}
+/*--////PAGE ACCORDION--------*/
+/*------ADDCLASS--------------*/
+.box-class{
+    border:1px solid #ccc;
+    background-color:#729fcf;
+    margin-top:10px;
+    width:800px;
+    height:70px;
+    padding:6px;
+    color:#cccccc;
+}
+.novaclass{
+    transition:2s;
+    width:500px;
+    background-color:#ffffff;
+    border-radius:6px;
+    padding:16px;
+    color:#000000;
+}
+/*------///ADDCLASS-----------*/
+/*--------BUTTON-------------*/
+.botao-content{
+    width:800px;
+}
+.botao-content ul li{
+    float:left;
+    margin-left:20px;
+}
+ul .options_botao{
+    position: absolute; width: 100px;
+}
+#toolbar-botao{
+    padding: 4px;
+    display: inline-block;
+}
+/*--------////BUTTON--------*/
+/*--------DRAGGABLE--------*/
+.content-drag{
+    width: 98%;
+    height: 330px;
+    padding: 10px;
+    border-radius:5px;
+    background-color: rgba(101, 75, 36, 0.43);
+}
+.drag-estilo{
+    width: 135px;
+    height: 118px;
+    padding: 10px;
+    box-shadow: 5px 9px 8px -5px #3F3030;
+    -moz-box-shadow: 5px 9px 8px -5px #3F3030;
+    background-color:#FFF;  
+}
+
+.drag-float{
+    float:left; margin-left:4px;
+}
+.drag-sortable1{
+    background-color: #363636;
+    color: #fff;
+    padding: 6px;
+}
+.drag-sortable li{
+    padding: 6px;
+}
+/*--------////DRAGGABLE--------*/
+/*--------DROPPABLE--------*/
+.drop-estilo{
+    width: 135px;
+    height: 270px;
+    padding: 10px;
+    box-shadow: 5px 9px 8px -5px #3F3030;
+    -moz-box-shadow: 5px 9px 8px -5px #3F3030;
+    background-color: #464646;
+    border: 3px solid #fff;
+    float: right;
+    margin-right: 6px;
+}
+.drop-estilo-in{
+    width: 100px;
+    height: 80px;
+    padding: 10px;
+    box-shadow: 5px 9px 8px -5px #3F3030;
+    -moz-box-shadow: 5px 9px 8px -5px #3F3030;
+    background-color: #464646;
+    border: 3px solid #fff;
+    position:relative;
+}
+.placeholder{
+    height:40px;
+    padding: 0px 0px 2px 10px;
+}
+    /*API jquery ui - imagens droppable*/
+    #gallery { float: left; width: 65%; min-height: 12em; } * html #gallery { height: 12em; } /* IE6 */
+    .gallery.custom-state-active { background: #eee; }
+    .gallery li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+    .gallery li h5 { margin: 0 0 0.4em; cursor: move; }
+    .gallery li a { float: right; }
+    .gallery li a.ui-icon-zoomin { float: left; }
+    .gallery li img { width: 100%; cursor: move; }
+
+    #trash { float: right; width: 32%; min-height: 18em; padding: 1%;} * html #trash { height: 18em; } /* IE6 */
+    #trash h4 { line-height: 16px; margin: 0 0 0.4em; }
+    #trash h4 .ui-icon { float: left; }
+    #trash .gallery h5 { display: none; }   
+/*--------////DROPPABLE--------*/
+/*--------EFFECT--------*/
+#botao{
+    color: #474747;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 3px 3px 5px -2px #3F3030;
+    -moz-box-shadow: 5px 9px 8px -5px #3F3030;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: 6px;
+    text-decoration: none;
+}
+#botao:active{
+    background-color: #FAA523;
+    color:#fff;
+}
+.content-effect{
+   width: 289px;
+    padding: 9px;
+    margin: auto;
+    height: 100px;
+    background-color: rgba(82, 65, 12, 0.77);
+    color: #fff;
+    border-radius: 4px;
+}
+/*--------////EFFECT--------*/
+/*--------MENU--------*/
+.menu-all{
+	
+}
+.menu-interno{
+	width:200px;
+	float:left;
+	margin-left:6px;	
+}
+
+/*--------//////MENU--------*/
+/*--------POSITION--------*/
+#parent {
+    width: 60%;
+    height: 40px;
+    margin: 10px auto;
+    padding: 5px;
+    border: 1px solid #777;
+    background-color: #fbca93;
+    text-align: center;
+  }
+  .positionable {
+    position: absolute;
+    display: block;
+    right: 0;
+    bottom: 0;
+    background-color: #bcd5e6;
+    text-align: center;
+  }
+  #positionable1 {
+    width: 75px;
+    height: 75px;
+  }
+  #positionable2 {
+    width: 120px;
+    height: 40px;
+  }
+/*--------//////POSITION--------*/
+
+/*--------JQUERYUI--------*/
+/*-----Estilo tabela----*/
+.tabela-elementos{
+    width:100%;
+    height:380px;
+    overflow:scroll;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width:100%;
+    position:relative;
+  -webkit-box-shadow:  0px 2px 1px 5px rgba(242, 242, 242, 0.1);
+    box-shadow:  0px 2px 1px 5px rgba(242, 242, 242, 0.1);
+
+}
+
+.zebra {
+    border: 1px solid #555;
+    height:400px;
+    margin:0 auto;
+}
+
+.zebra td {
+    border-left: 1px solid #555;
+    border-top: 1px solid #555;
+    padding: 10px;
+    text-align: left;    
+}
+
+.zebra th{
+    border-left: 1px solid #555;
+  border-bottom: 1px solid #828282;
+    color:#fff;
+    font-weight:bold;
+    padding: 20px; 
+}
+
+
+/*.zebra tbody tr:nth-child(even) {
+    background: #000 !important;
+  color:#fff;
+}*/
+
+
+.zebra tr {
+  background:#404040;
+  color:#fff;
+}
+
+/*--------//////JQUERYUI--------*/
+/*-------PROGRESSBAR------------*/
+.containerprogress{
+    margin-top:10px;
+}
+/*-------/////PROGRESSBAR-------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

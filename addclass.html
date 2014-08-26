@@ -1,0 +1,47 @@
+<div class="content-html">
+    <h1>AddClass</h1>
+    <hr class="hr" />
+    <div class="comentario_funcao">
+        <p>Com esse efeito é possível adicionar uma classe a algum elemento do código.</p>
+        <p>O código para adicionar a classe seria assim:
+        <pre><code class=" hljs javascript">
+            $( ".addclass-botao" ).click(function() {
+              $( ".box-class" ).addClass( "nomedaclass");
+              return false;
+            });
+        </code></pre>
+        </p>
+        <p>  Para complementar colocarei o removeClass do jQuery para o exemplo ficar mais dinâmico.</p>
+        <p>O código ficaria assim:
+        <pre><code class=" hljs javascript">
+            $( ".removeclass-botao" ).click(function() {
+              $( ".box-class" ).removeClass( "nomedaclass" );
+            });
+        </code></pre>
+        </p>
+        <div class="menu-accordion">
+            <ul>
+                <li class="addclass-botao">addClass</li>
+                <li class="removeclass-botao">removeClass</li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+        <div class="box-class">
+            Essa é uma caixa de teste, clique nos botões e veja o que acontece ;).
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    
+    /*-------------- ADDCLASS ---------------*/
+    var boxclass =  $( ".box-class" );
+
+    $( ".addclass-botao" ).click(function() {
+        boxclass.addClass( "novaclass");
+        return false;
+    });
+    $( ".removeclass-botao" ).click(function() {
+        boxclass.removeClass( "novaclass");
+    });
+    hightlight();
+</script>

@@ -1,0 +1,66 @@
+
+<div class="content-html">
+    <h1>Animate</h1>
+    <hr class="hr" />
+    <div class="comentario_funcao">
+        <p>Esse efeito é bem parecido com o addClass, ele altera os atributos de um elemento com enfase em cores e tamanho.</p>
+        <p>O código para adicionar esse efeito seria assim:
+            <pre><code class=" hljs javascript">
+                $(function() {
+                    var state = true;
+                    $( ".botao-animate" ).click(function() {
+                      if ( state ) {
+                        $( ".box-class" ).animate({
+                          backgroundColor: "#fff",
+                          color: "#000",
+                          width: 500
+                        }, 1000 );
+                      } else {
+                        $( ".box-class" ).animate({
+                          backgroundColor: "#000",
+                          color: "#fff",
+                          width: 700
+                        }, 1000 );
+                      }
+                      state = !state;
+                    });
+                  });
+            </code></pre>
+        </p>
+        <p>No caso eu deixei tres estados diferentes, o default o se state = true e o se state = false, veja o exemplo:</p>
+        <div class="menu-accordion">
+            <ul>
+                <li class="botao-animate">Animar</li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+        <div class="box-class">
+            Essa é uma caixa de teste, clique no botão e veja o que acontece ;).
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    /*-------------- ANIMATE ---------------*/
+    $(function() {
+        var state = true;
+        $( ".botao-animate" ).click(function() {
+            if ( state ) {
+                $( ".box-class" ).animate({
+                    backgroundColor: "#fff",
+                    color: "#000",
+                    width: 500
+                }, 1000 );
+            } else {
+                $( ".box-class" ).animate({
+                    backgroundColor: "#000",
+                    color: "#fff",
+                    width: 700
+                }, 1000 );
+            }
+            state = !state;
+        });
+    });
+
+    hightlight();
+</script>

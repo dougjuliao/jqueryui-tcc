@@ -1,0 +1,34 @@
+<style>
+  #sortable_efeito { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable_efeito li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  #sortable_efeito li span { position: absolute; margin-left: -1.3em; }
+  </style>
+<div class="content-html">
+    <h1>Sortable</h1>
+    <hr class="hr" />
+    <div class="comentario_funcao">
+        <p>Com esse efeito é possível arrastar os elementos e mudarem de ordem</p>
+        <p>O código default seria:
+        <pre><code class=" hljs javascript">
+            $( "#sortable_efeito" ).sortable();
+        </code></pre>
+        </p>
+        
+        <div class="clear"></div>
+        <ul id="sortable_efeito">
+		  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+		  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+		  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+		  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+		  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+		  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+		  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+		</ul>
+    </div>
+</div>
+<script type="text/javascript">
+    /*-------------- SORTABLE ---------------*/
+     $( "#sortable_efeito" ).sortable();
+
+    hightlight();
+</script>

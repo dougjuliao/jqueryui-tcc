@@ -1,0 +1,126 @@
+
+<div class="content-html">
+    <h1>Dialog</h1>
+    <hr class="hr" />
+    <div class="comentario_funcao">
+        <p>Esse efeito é o que abre uma tela de dialogo ou modal.</p>
+        <p>Seu código default é esse:
+            <pre><code class="hljs javascript">
+                $('.dialog-default').dialog();
+            </code></pre>
+        </p>
+        <p>Para ver os exemplos clique nos botões abaixo:</p>
+        <div class="menu-accordion menu-dialog">
+            <ul>
+                <li class="dialog-default-bt" id="0">Default</li>
+                <li class="dialog-animation-bt" id="1">Animation</li>
+                <li class="dialog-basic-bt" id="2">Basic</li>
+                <li class="dialog-confirmation-bt" id="3">Confirmation</li>
+                <li class="dialog-form-bt" id="4">Form</li>
+                <li class="dialog-message-bt" id="5">Message</li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div class="modal-dialog">
+            <div class="dialog-default" title="Dialog Default" style="display:none;">
+                <p>Esse é o dialog default, ele tem um texto qualquer e pode ser remimensionado.</p>
+            </div>
+            <div class="dialog-animation" title="Dialog Animation" style="display:none;">
+                <p>Esse é o dialog animation, ele tem um texto qualquer e pode ser remimensionado.</p>
+            </div>
+            <div class="dialog-basic" title="Dialog Animation" style="display:none;">
+                <p>Esse é o dialog basic modal, ele tem um texto qualquer e pode ser remimensionado.</p>
+            </div>
+            <div class="dialog-confirmation" title="Dialog Animation" style="display:none;">
+                <p>Esse é o dialog confirmation, ele tem um texto qualquer e pode ser remimensionado.</p>
+            </div>
+            <div class="dialog-form" title="Novo Usuário" style="display:none;">
+                <p class="validateTips">Exemplo e formulário sem validação.</p>
+                <form>
+                    <fieldset>
+                        <label for="name">Nome</label>
+                        <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" value="" class="text ui-widget-content ui-corner-all">
+                        <label for="password">Senha</label>
+                        <input type="password" name="password" id="password" value="" class="text ui-widget-content ui-corner-all">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="dialog-message" title="Dialog Animation" style="display:none;">
+                <p>Esse é o dialog Message, ele tem um texto qualquer e pode ser remimensionado, usado para aceitar alguma coisa.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var menuli = $(".menu-dialog li");
+    menuli.on("click",function(){//Menu dialog
+        var classbotaodialog = $(this).attr('class'),//Pego o nome da class
+            botaoativo = $("."+classbotaodialog);
+
+            menuli.removeClass('background-active');
+            botaoativo.addClass('background-active');    
+
+
+        if(classbotaodialog == "dialog-default-bt"){
+            $(".dialog-default").dialog();//default
+        }else if(classbotaodialog == "dialog-animation-bt"){
+            $(".dialog-animation").dialog({//animation
+                //autoOpen:false,
+                show:{
+                    effect: randomefeito(),
+                    duration: 1000
+                },
+                hide:{
+                    effect: randomefeitosair(),
+                    duration: 1000
+                }
+            });
+        }else if(classbotaodialog == "dialog-basic-bt"){
+            $(".dialog-basic").dialog({//basic modal
+                modal:true
+            });
+        }else if(classbotaodialog == "dialog-confirmation-bt"){
+            $(".dialog-confirmation").dialog({//confirmation
+                modal:true,
+                hide:{
+                    effect: "explode"
+                },
+                buttons:{
+                    "Deletar alguma coisa": function(){
+                        $(this).dialog("close");
+                    },
+                    Cancel: function(){
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        }else if(classbotaodialog == "dialog-form-bt"){
+            $(".dialog-form").dialog({
+                modal:true,
+                hide:"explode",
+                duration:800,
+                buttons:{
+                    "Salvar": function(){
+                       window.alert("Dados salvos com sucesso");
+                    },
+                    cancel: function(){
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        }else if(classbotaodialog == "dialog-message-bt"){
+            $(".dialog-message").dialog({
+                modal:true,
+                buttons:{
+                    Ok: function(){
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        }
+    });
+
+    hightlight();
+</script>

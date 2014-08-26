@@ -1,0 +1,72 @@
+<div class="content-html">
+    <h1>Effect</h1>
+    <hr class="hr" />
+    <div class="comentario_funcao">
+        <p>Com essa opção é possivel criar diversos efeitos, o efeito das telas que estão sendo carregadas pos ajax foram feitas com o effect(slide).</p>
+        <p>O código para adicionar effect seria esse(demonstração do efeito slide):
+        <pre><code class=" hljs javascript">
+            $( ".box-effect" ).effect('slide');
+        </code></pre>
+            Existem bastante efeitos, logo abaixo estão eles.
+        </p>
+        <select name="effects" id="effectTypes">
+          <option value="blind">Blind</option>
+          <option value="bounce">Bounce</option>
+          <option value="clip">Clip</option>
+          <option value="drop">Drop</option>
+          <option value="explode">Explode</option>
+          <option value="fade">Fade</option>
+          <option value="fold">Fold</option>
+          <option value="highlight">Highlight</option>
+          <option value="puff">Puff</option>
+          <option value="pulsate">Pulsate</option>
+          <option value="scale">Scale</option>
+          <option value="shake">Shake</option>
+          <option value="size">Size</option>
+          <option value="slide">Slide</option>
+          <option value="transfer">Transfer</option>
+        </select>
+        <a id="botao" class="ui-button-text">Executar efeito</a>
+        <div class="box-effect"></div>
+        <div class="content-effect">
+            Eu serei o Box dos efeitos, veja como é divertido!
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  /*-------------- EFFECT ---------------*/
+    // run the currently selected effect
+    function runEffect() {
+        // get effect type from
+         var selectedEffect = $( "#effectTypes" ).val();
+     
+        // most effect types need no options passed by default
+        var options = {};
+        // some effects have required parameters
+         if ( selectedEffect === "scale" ) {
+          options = { percent: 0 };
+        } else if ( selectedEffect === "transfer" ) {
+          options = { to: "#botao", className: "content-effect" };
+        } else if ( selectedEffect === "size" ) {
+          options = { to: { width: 200, height: 60 } };
+         }
+     
+        // run the effect
+        $( ".content-effect" ).effect( selectedEffect, options, 500, callback );
+    };
+
+    // callback function to bring a hidden box back
+    function callback() {
+      setTimeout(function() {
+        $( ".content-effect" ).removeAttr( "style" ).hide().fadeIn();
+      }, 1000 );
+    };
+
+    // set effect from select menu value
+    $( "#botao" ).click(function() {
+      runEffect();
+      return false;
+    });
+
+    hightlight();
+</script>        
