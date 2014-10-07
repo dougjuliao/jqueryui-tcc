@@ -8,14 +8,15 @@ $(document).ready(function(){
     $("#menu-indice").menu();
 
     //variaveis para os numeros randomicos criados em javascript.
-    var efeitoentrar = randomefeito();
-    var efeitosair = randomefeitosair();
+    var efeitoentrar   = randomefeito(),
+        efeitosair     = randomefeitosair(),
+        sectionDireita = $("#conteudo-section-direita");
 
-    $("#conteudo-section-direita").load("home.html");
+    sectionDireita.load("home.html");
     
     $("#menu-indice li").click(function(){
          var page = $(this).attr("id");
-         $("#conteudo-section-direita").load(page+".html");
+         sectionDireita.load(page+".html");
 
             
         //Add class para o menu atual
